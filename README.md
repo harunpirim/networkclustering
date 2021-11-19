@@ -12,7 +12,7 @@ Reference: Nascimento et al. / Computers & Operations Research 37 (2010) 1381 --
 Reference: European Journal of Operational Research 173 (2006) 866–879
 --------------------------------------------------------------------------------------------------------------
 4-Modularity Maximization Model
-Reference: Gaurav Agarwal, David Kempe: Modularity-Maximizing Graph Communities via Mathematical Programming, 2008
+Reference: Gaurav Agarwal, David Kempe: Modularity-Maximizing Graph Communities via Mathematical Programming, 2008 \\
 Note: x_(u,v)=0 if u and v are in the same cluster
 m_(i,j)≔a_(i,j)-(d_i d_j)/2m   (modularity matrix)
 --------------------------------------------------------------------------------------------------------------
