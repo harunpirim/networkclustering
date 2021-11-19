@@ -3,8 +3,7 @@
 The codes will optimize following mathematical models:
 
 Model1 -Diversity Cluster Model-Graph Coloring
-Reference: Oleg Shirokikh, Vladimir Stozhkov and Vladimir Boginski, Combinatorial Optimization Techniques for Network-Based DataMining, P.M. Pardalos et al. (eds.), 
-Handbook of Combinatorial Optimization, Springer 2013
+Reference: Oleg Shirokikh, Vladimir Stozhkov and Vladimir Boginski, Combinatorial Optimization Techniques for Network-Based DataMining, P.M. Pardalos et al. (eds.), Handbook of Combinatorial Optimization, Springer 2013
 --------------------------------------------------------------------------------------------------------------
 2-Within Cluster Distance Minimization Model
 Reference: Nascimento et al. / Computers & Operations Research 37 (2010) 1381 -- 1388
