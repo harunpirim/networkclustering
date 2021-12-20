@@ -14,7 +14,7 @@ import networkx as nx
 K = 9
 C= range(K)
 
-df = pd.read_csv("ukfaculty.csv")
+df = pd.read_csv("UKfaculty_dist.csv")
 V =list()
 d_ij = {}
 
