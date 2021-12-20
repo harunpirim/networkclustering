@@ -39,15 +39,15 @@ print("E:", E)
 # #-------------------------------------------------------#
 
 X_ic, D_c = {}, {}
-graph_coloring = Model()
+model3 = Model()
 for c in C:
     for i in V:
-        X_ic[i,c] = graph_coloring.addVar(vtype=GRB.BINARY, lb=0, ub=1, name="X_ic[%s, %s]" % (i,c))
+        X_ic[i,c] = model3.addVar(vtype=GRB.BINARY, lb=0, ub=1, name="X_ic[%s, %s]" % (i,c))
 
 for c in C:
-    D_c[c] = graph_coloring.addVar(vtype=GRB.CONTINUOUS, lb=0, name="D_c[%s]" % (c))
+    D_c[c] = model3.addVar(vtype=GRB.CONTINUOUS, lb=0, name="D_c[%s]" % (c))
 
-D_max = graph_coloring.addVar(vtype=GRB.CONTINUOUS, lb=0, name="D_max")
+D_max = model3.addVar(vtype=GRB.CONTINUOUS, lb=0, name="D_max")
 # #-------------------------------------------------------#
 # #                 defining constraints                     #
 # #-------------------------------------------------------#
@@ -55,21 +55,21 @@ D_max = graph_coloring.addVar(vtype=GRB.CONTINUOUS, lb=0, name="D_max")
 for i in V:
     for j in V:
         for c in C:
-            graph_coloring.addConstr(D_c[c] >= d_ij[i,j] *(X_ic[i,c] +X_ic[j,c] -1), name='const1')
+            model3.addConstr(D_c[c] >= d_ij[i,j] *(X_ic[i,c] +X_ic[j,c] -1), name='const1')
 
 for i in V:
-    graph_coloring.addConstr(quicksum(X_ic[i,c] for c in C) == 1, name= 'const2')
+    model3.addConstr(quicksum(X_ic[i,c] for c in C) == 1, name= 'const2')
 
 for c in C:
-    graph_coloring.addConstr(quicksum(X_ic[i,c] for i in V) >= 1, name= 'const3')
+    model3.addConstr(quicksum(X_ic[i,c] for i in V) >= 1, name= 'const3')
 
 for c in C:
-    graph_coloring.addConstr(D_max >= D_c[c], name='const4')
+    model3.addConstr(D_max >= D_c[c], name='const4')
 
-graph_coloring.setObjective(D_max, GRB.MINIMIZE)
+model3.setObjective(D_max, GRB.MINIMIZE)
 
-graph_coloring.update()
-graph_coloring.optimize()
+model3.update()
+model3.optimize()
 
 val_map = {}
 for c in C:
