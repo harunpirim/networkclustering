@@ -75,8 +75,7 @@ val_map = {}
 for c in C:
     for i in V:
         if X_ic[i,c].x >0:
-            # print("X_ic[%s, %s]:" % (i,c), X_ic[i,c].x, "colour type:", c)
-            val_map[i] = c
+           val_map[i] = c
 
 
 G = nx.Graph()
